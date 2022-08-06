@@ -15,6 +15,18 @@
     "dev": "ts-node src/main.ts",
     "lint": "eslint . --ext .ts"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write",
+      "npm run lint",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/49V/back-end-god.git"
@@ -32,6 +44,8 @@
     "@typescript-eslint/eslint-plugin": "^5.32.0",
     "@typescript-eslint/parser": "^5.32.0",
     "eslint": "^8.21.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
   },

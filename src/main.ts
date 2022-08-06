@@ -4,7 +4,9 @@ const port = 3000;
 
 app.get("/", function (req, res) {
   res.send("Hello World");
+  const unusedVariable = 1
 });
 
 console.log(`Listening on port ${port}`);
+    console.log("")
 app.listen(port);
